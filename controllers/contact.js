@@ -12,8 +12,9 @@ exports.createContact = asyncHandler(async (req, res, next) => {
 
   try {
     await sendEmail({
-      email: req.body.email,
+      email: "iyaki@lotusbetaanalytics.com",
       subject: "Contact Page",
+      cc: "ayomide@lotusbetaanalytics.com",
       message,
     });
     const contact = await Contact.create(req.body);
